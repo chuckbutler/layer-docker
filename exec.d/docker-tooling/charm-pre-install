@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+pip install -U --no-index -f wheelhouse wheelhouse/setup*
+
+# this is not offline, allow failure for now, pending resolution of
+# https://github.com/juju/charm-tools/issues/184 in order to wheelhouse
+# pack the docker dependencies
+
+set +e
+pip install docker-compose
